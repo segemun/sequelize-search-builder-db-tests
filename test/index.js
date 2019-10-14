@@ -18,9 +18,13 @@ const notLikeData = require('./data/where-builder/notLike');
 
 const orderData = require('./data/order-builder');
 
-async function makeRequest(request, modelName){
-  const searchBuilder = new SearchBuilder(models.Sequelize, request);
-
+async function makeRequest(request, modelName, config){
+  const searchBuilder = new SearchBuilder(models.Sequelize, request, config);
+  
+  if (config) {
+    searchBuilder.setConfig(config);
+  }
+  
   return await models[modelName].findAll({
     include: [{all: true, nested: true}],
     where: searchBuilder.getWhereQuery(),
@@ -36,9 +40,9 @@ function compareOrderDataset(row) {
   compareDataset(row);
 }
 
-function compareDataset(row) {
+function compareDataset(row, config) {
   it(row.it, async () => {
-    const data = await makeRequest(row.request, row.modelName);
+    const data = await makeRequest(row.request, row.modelName, config);
     const idList = data.map(record => record.id);
 
     if (typeof row.expected === 'function') {
@@ -93,5 +97,18 @@ describe('SearchBuilder', () => {
     describe('Order query', () => {
       orderData.forEach(compareOrderDataset);
     });
+  });
+  
+  describe('Test config injection', () => {
+    const data = {
+      it: 'Equal author.name',
+      modelName: 'author',
+      request: {f: {'author.name': 'Richard'}},
+      expected: [1]
+    };
+    
+    const config = {fields: {filter: 'f'}};
+    
+    compareDataset(data, config);
   });
 });
