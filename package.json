@@ -21,7 +21,7 @@
     "sequelize": "^5.19.5",
     "sequelize-cli": "^5.5.1",
     "sequelize-fixtures": "^1.0.2",
-    "sequelize-search-builder": "^0.2.1"
+    "sequelize-search-builder": "^0.2.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
