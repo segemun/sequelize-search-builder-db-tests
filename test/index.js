@@ -18,17 +18,21 @@ const notLikeData = require('./data/where-builder/notLike');
 
 const orderData = require('./data/order-builder');
 
+const limitData = require('./data/limit');
+
 async function makeRequest(request, modelName, config){
   const searchBuilder = new SearchBuilder(models.Sequelize, request, config);
   
   if (config) {
     searchBuilder.setConfig(config);
   }
-  
+
   return await models[modelName].findAll({
     include: [{all: true, nested: true}],
     where: searchBuilder.getWhereQuery(),
     order: searchBuilder.getOrderQuery() || [['id', 'asc']],
+    limit: searchBuilder.getLimitQuery(),
+    offset: searchBuilder.getOffsetQuery(),
   }).map(value => value.get({plain: true})); 
 };
 
@@ -97,6 +101,10 @@ describe('SearchBuilder', () => {
     describe('Order query', () => {
       orderData.forEach(compareOrderDataset);
     });
+  });
+  
+  describe('Test limit and offset query', () => {
+    limitData.forEach(compareDataset);
   });
   
   describe('Test config injection', () => {
