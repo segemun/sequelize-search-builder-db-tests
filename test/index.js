@@ -15,6 +15,8 @@ const inData = require('./data/where-builder/in');
 const notInData = require('./data/where-builder/notIn');
 const likeData = require('./data/where-builder/like');
 const notLikeData = require('./data/where-builder/notLike');
+const iLikeData = require('./data/where-builder/iLike');
+const notILikeData = require('./data/where-builder/iLike');
 
 const orderData = require('./data/order-builder');
 
@@ -94,6 +96,12 @@ describe('SearchBuilder', () => {
     });
     describe('Not Like operator', () => {
       notLikeData.forEach(compareWhereDataset);
+    });    
+    describe('iLike operator', () => {
+      iLikeData.forEach(compareWhereDataset);
+    });
+    describe('notILike operator', () => {
+      notILikeData.forEach(compareWhereDataset);
     });
   });
   
