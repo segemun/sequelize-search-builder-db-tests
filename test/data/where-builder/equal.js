@@ -39,4 +39,16 @@ module.exports = [
     },
     expected: [1, 2]
   },
+  {
+    it: 'Equal book.publicationDate (string)',
+    modelName: 'book',
+    request: 'filter[book.publicationDate]=1996',
+    expected: [1, 2]
+  },
+  {
+    it: 'Equal book.publicationDate (string with prefix)',
+    modelName: 'book',
+    request: '?filter[book.publicationDate]=1996',
+    expected: [1, 2]
+  },
 ];
