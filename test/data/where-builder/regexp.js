@@ -12,7 +12,7 @@ module.exports = [
     expected: [2]
   },
   {
-    it: 'Regexp author.name',
+    it: 'Regexp author.name empty response',
     modelName: 'author',
     request: {
       filter: {
@@ -24,7 +24,7 @@ module.exports = [
     expected: []
   },
   {
-    it: 'Regexp author.name',
+    it: 'Regexp author.name start with',
     modelName: 'author',
     request: {
       filter: {
