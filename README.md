@@ -1,6 +1,7 @@
 # DB tests for Sequelize Search Builder module
 
-Create and fill database
+- Make env file with posgre connection
+- Create and fill database
 ```sh
 npm run db:load-all
 ```
