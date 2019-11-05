@@ -19,6 +19,7 @@ const iLikeData = require('./data/where-builder/iLike');
 const notILikeData = require('./data/where-builder/iLike');
 const regexpData = require('./data/where-builder/regexp');
 const notRegexpData = require('./data/where-builder/notRegexp');
+const iRegexpData = require('./data/where-builder/iRegexp');
 
 const conditionData = require('./data/condition');
 
@@ -112,6 +113,9 @@ describe('SearchBuilder', () => {
     });
     describe('Not Regexp operator', () => {
       notRegexpData.forEach(compareWhereDataset);
+    });
+    describe('iRegexp operator', () => {
+      iRegexpData.forEach(compareWhereDataset);
     });
   });
   

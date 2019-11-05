@@ -35,4 +35,16 @@ module.exports = [
     },
     expected: [2]
   },
+  {
+    it: 'Regexp author.name case sensitive empty response',
+    modelName: 'author',
+    request: {
+      filter: {
+        'author.name': {
+          regexp: 'Val N'
+        },
+      }
+    },
+    expected: []
+  },
 ];
