@@ -1,50 +1,38 @@
 module.exports = [
     {
-      it: 'Not Regexp author.name',
+      it: 'notIRegexp author.name',
       modelName: 'author',
       request: {
         filter: {
           'author.name': {
-            notRegexp: 'val N'
+            notIRegexp: 'vAl N'
           },
         }
       },
       expected: [1, 3]
     },
     {
-      it: 'Not Regexp author.name all authors',
+      it: 'notIRegexp author.name all authors',
       modelName: 'author',
       request: {
         filter: {
           'author.name': {
-            notRegexp: '^val N'
+            notIRegexp: '^Val N'
           },
         }
       },
       expected: [1, 2, 3]
     },
     {
-      it: 'notRegexp author.name start with',
+      it: 'notIRegexp author.name start with',
       modelName: 'author',
       request: {
         filter: {
           'author.name': {
-            notRegexp: '^Yuval N'
+            notIRegexp: '^YuVal N'
           },
         }
       },
       expected: [1, 3]
-    },
-    {
-      it: 'notRegexp author.name start with (empty response)',
-      modelName: 'author',
-      request: {
-        filter: {
-          'author.name': {
-            notRegexp: '^YuVal N'
-          },
-        }
-      },
-      expected: [1, 2, 3]
     },
   ];
