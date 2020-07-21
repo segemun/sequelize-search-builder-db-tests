@@ -1,6 +1,6 @@
 {
   "name": "sequelize-search-builder-db-tests",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tests with db requests for sequelize-search-builder module",
   "main": "test/inex.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "db:create": "sequelize db:create",
     "db:fixtures:load": "node ./config/fixtures",
     "db:models:sync:force": "node ./scripts/models-sync",
-    "db:load-all": "npm run db:drop || true && npm run db:create && npm run db:models:sync:force && npm run db:fixtures:load",
+    "db:load-all": "(npm run db:drop || true) && npm run db:create && npm run db:models:sync:force && npm run db:fixtures:load",
     "test": "mocha --exit"
   },
   "author": "Sergey Mukhin (segemun) <sergeymukhin21@gmail.com>",
@@ -16,12 +16,12 @@
   "dependencies": {
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "pg": "7.12.1",
-    "sequelize": "^5.19.5",
+    "sequelize": "^5.22.3",
     "sequelize-cli": "^5.5.1",
-    "sequelize-fixtures": "^1.0.2",
-    "sequelize-search-builder": "^0.9.0"
+    "sequelize-fixtures": "^1.2.0",
+    "sequelize-search-builder": "^0.9.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
