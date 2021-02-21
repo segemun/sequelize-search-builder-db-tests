@@ -1136,10 +1136,10 @@ sequelize-pool@^2.3.0:
   resolved "https://registry.yarnpkg.com/sequelize-pool/-/sequelize-pool-2.3.0.tgz#64f1fe8744228172c474f530604b6133be64993d"
   integrity sha512-Ibz08vnXvkZ8LJTiUOxRcj1Ckdn7qafNZ2t59jYHMX1VIebTAOYefWdRYFt6z6+hy52WGthAHAoLc9hvk3onqA==
 
-sequelize-search-builder@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/sequelize-search-builder/-/sequelize-search-builder-0.10.0.tgz#8b717ec85b30ac4db50344a5da1927d42a3bc34f"
-  integrity sha512-F9ehh6iDmiJIlfPSUMtWe3TllfgAn2EdC2f6oI1ILvoKd320vP6g+lnhYhv3yh8NyH1sOqeE6ha0RBmTLS3frg==
+sequelize-search-builder@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/sequelize-search-builder/-/sequelize-search-builder-0.11.0.tgz#ea146fcab9976ccd0021afac73bc19d6863779e2"
+  integrity sha512-5fvzhDqiZyVBPlGiuE5dqia30uaz33ClJc/mwo9uJfmSDJYF1RpPSMDOGLrRfsH0KV/vROEdgERjsicMtZy5rg==
   dependencies:
     lodash.merge "^4.6.2"
     qs "^6.9.0"
